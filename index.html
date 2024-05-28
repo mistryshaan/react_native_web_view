@@ -7,5 +7,16 @@
   </head>
   <body>
     <h5>Web view from Mobile App</h5>
+    <button onclick="sendToken">Send token</button>
   </body>
+  <script>
+    function sendToken() {
+      console.log("Clicked");
+      if (window?.ReactNativeWebView) {
+        window.ReactNativeWebView.postMessage(
+          JSON.stringify({ type: "webview/save", payload: "shaan_mistry" })
+        );
+      }
+    }
+  </script>
 </html>
