@@ -8,6 +8,9 @@
   <body>
     <h5>Web view from Mobile App</h5>
     <button onclick="sendToken()">Send token</button>
+    <br />
+    <br />
+    <p id="userAgent"></p>
   </body>
   <script>
     function sendToken() {
@@ -17,6 +20,10 @@
           JSON.stringify({ type: "webview/save", payload: "shaan_mistry" })
         );
       }
+    }
+
+    if (navigator) {
+      document.getElementById("userAgent").innerText = navigator?.userAgent;
     }
   </script>
 </html>
