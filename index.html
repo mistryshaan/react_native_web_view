@@ -11,12 +11,13 @@
     <br />
     <br />
     <p id="userAgent"></p>
+    <p id="cookieTag"></p>
   </body>
   <script>
     function sendToken() {
       console.log("Clicked");
       if (window?.ReactNativeWebView) {
-        window.ReactNativeWebView.postMessage(
+        window.ReactNativeWebView?.postMessage(
           JSON.stringify({
             type: "webview/save",
             payload: { access_token: "shaan_mistry" },
@@ -29,6 +30,8 @@
       document.getElementById("userAgent").innerText =
         "User agent: " + navigator?.userAgent;
     }
+
+    document.getElementById("cookieTag").innerText = document.cookie;
   </script>
   <!-- Start of Async Drift Code -->
   <script>
